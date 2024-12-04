@@ -1,0 +1,74 @@
+---
+title: "mucopolysacchidoses"
+output:
+  html_document:
+    code_folding: hide
+date: "2024-12-03"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  autodep = TRUE,
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.align = "center", 
+  out.width ="75%", 
+  out.height = "75%"
+)
+```
+
+```{r}
+library(tidyverse)
+library(GEOquery)
+library(rentrez)
+library(kableExtra)
+```
+
+# Introduction
+
+I want to write a script here to be able to recursively obtain all the dataset metadata in the GEO database for the childhood dementias. 
+
+I will start as a proof of principal for mucopolysaccharidoses (MPS) diseases, as this has a nice keyword. 
+
+```{r}
+# Search GEO database for the term "mucopolysaccharidoses"
+search_results <- entrez_search(db = "gds", term = "mucopolysaccharidoses")
+
+# Get GEO accessions (GSE IDs)
+geo_accessions <- search_results$ids
+
+
+# get more info. 
+# this takes a while
+record_summaries <- lapply(geo_accessions, 
+                           function(id) entrez_summary(db = "gds", id = id)
+                           )
+```
+
+The GEO database (GDS) was searched with the package rentrez for the term "mucopolysaccharidoses". This returned `r search_results$count` datasets. 
+
+Useful metadata has been added to the sheet below (and this can be exported - ask KB)
+
+```{r}
+lapply(record_summaries, function(x) {
+  tibble(
+    accession = x$accession,    # GEO accession number
+    species = x$taxon,
+    type = x$gdstype %>% unlist, # type of exp
+    title = x$title,            # Title of the dataset
+    summary = x$summary,         # Summary/description
+    nsamples = x$samples %>% nrow
+  )
+}) %>% 
+  bind_rows() %>% 
+  kable(caption = "Datasets in GEO database containing mucopolysaccharidoses") %>% 
+  kable_styling() %>% 
+  scroll_box(width = "100%", height = "800px")
+```
+
+# conclusion 
+This works nicely. Now to try expanding this to other disorders
+

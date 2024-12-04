@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2024-12-03" />
+
+<title>mucopolysacchidoses</title>
+
+<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">2024_childhood_dementia_omics</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="MPS.html">MPS</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">mucopolysacchidoses</h1>
+<h4 class="date">2024-12-03</h4>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2024-12-04
+</p>
+<p>
+<strong>Checks:</strong> <span
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> 1
+</p>
+<p>
+<strong>Knit directory:</strong>
+<code>2024_childhood_dementia_omics/</code> <span
+class="glyphicon glyphicon-question-sign" aria-hidden="true"
+title="This is the local directory in which the code in this file was executed.">
+</span>
+</p>
+<p>
+This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a>
+analysis was created with <a
+  href="https://github.com/workflowr/workflowr">workflowr</a> (version
+1.7.1). The <em>Checks</em> tab describes the reproducibility checks
+that were applied when the results were created. The <em>Past
+versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguncommittedchanges"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The R Markdown is untracked by Git. To know which version of the R
+Markdown file created these results, you’ll want to first commit it to
+the Git repo. If you’re still working on the analysis, you can ignore
+this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the
+global environment can affect the analysis in your R Markdown file in
+unknown ways. For reproduciblity it’s best to always run the code in an
+empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20241204code">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Seed:</strong>
+<code>set.seed(20241204)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20241204code"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20241204)</code> was run prior to running
+the code in the R Markdown file. Setting a seed ensures that any results
+that rely on randomness, e.g. subsampling or permutations, are
+reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Session information:</strong>
+recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package
+versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be
+confident that you successfully produced the results during this
+run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr
+project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomkarissab2024childhooddementiaomicstree1dda190aa62d51bf33445eecb4a6f905f79381cctargetblank1dda190a">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/karissa-b/2024_childhood_dementia_omics/tree/1dda190aa62d51bf33445eecb4a6f905f79381cc" target="_blank">1dda190</a>
+</a>
+</p>
+</div>
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomkarissab2024childhooddementiaomicstree1dda190aa62d51bf33445eecb4a6f905f79381cctargetblank1dda190a"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development
+and connecting the code version to the results is critical for
+reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version
+<a href="https://github.com/karissa-b/2024_childhood_dementia_omics/tree/1dda190aa62d51bf33445eecb4a6f905f79381cc" target="_blank">1dda190</a>.
+See the <em>Past versions</em> tab to see a history of the changes made
+to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for
+the analysis have been committed to Git prior to generating the results
+(you can use <code>wflow_publish</code> or
+<code>wflow_git_commit</code>). workflowr only checks the R Markdown
+file, but you know if there are other scripts or data files that it
+depends on. Below is the status of the Git repository when the results
+were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    .Rproj.user/
+
+Untracked files:
+    Untracked:  MPS.Rmd
+    Untracked:  MPS.html
+    Untracked:  analysis/MPS.Rmd
+
+Unstaged changes:
+    Modified:   analysis/_site.yml
+    Deleted:    analysis/about.Rmd
+    Modified:   analysis/index.Rmd
+    Deleted:    analysis/license.Rmd
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not
+included in this status report because it is ok for generated content to
+have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+<p>
+There are no past versions. Publish this analysis with
+<code>wflow_publish()</code> to start tracking its development.
+</p>
+<hr>
+</div>
+</div>
+</div>
+<pre class="r"><code>library(tidyverse)
+library(GEOquery)
+library(rentrez)
+library(kableExtra)</code></pre>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>I want to write a script here to be able to recursively obtain all
+the dataset metadata in the GEO database for the childhood
+dementias.</p>
+<p>I will start as a proof of principal for mucopolysaccharidoses (MPS)
+diseases, as this has a nice keyword.</p>
+<pre class="r"><code># Search GEO database for the term &quot;mucopolysaccharidoses&quot;
+search_results &lt;- entrez_search(db = &quot;gds&quot;, term = &quot;mucopolysaccharidoses&quot;)
+
+# Get GEO accessions (GSE IDs)
+geo_accessions &lt;- search_results$ids
+
+
+# get more info. 
+# this takes a while
+record_summaries &lt;- lapply(geo_accessions, 
+                           function(id) entrez_summary(db = &quot;gds&quot;, id = id)
+                           )</code></pre>
+<p>The GEO database (GDS) was searched with the package rentrez for the
+term “mucopolysaccharidoses”. This returned 69 datasets.</p>
+<p>Useful metadata has been added to the sheet below (and this can be
+exported - ask KB)</p>
+<pre class="r"><code>lapply(record_summaries, function(x) {
+  tibble(
+    accession = x$accession,    # GEO accession number
+    species = x$taxon,
+    type = x$gdstype %&gt;% unlist, # type of exp
+    title = x$title,            # Title of the dataset
+    summary = x$summary,         # Summary/description
+    nsamples = x$samples %&gt;% nrow
+  )
+}) %&gt;% 
+  bind_rows() %&gt;% 
+  kable(caption = &quot;Datasets in GEO database containing mucopolysaccharidoses&quot;) %&gt;% 
+  kable_styling() %&gt;% 
+  scroll_box(width = &quot;100%&quot;, height = &quot;800px&quot;)</code></pre>
+<div
+style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:800px; overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Datasets in GEO database containing mucopolysaccharidoses
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+accession
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+species
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+type
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+title
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+summary
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nsamples
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+GSE224139
+</td>
+<td style="text-align:left;">
+Homo sapiens
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Single, off-the-shelf treatment of Neuropathic Mucopolysaccharidoses
+with iPSC-derived microglia
+</td>
+<td style="text-align:left;">
+This SuperSeries is composed of the SubSeries listed below.
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE224136
+</td>
+<td style="text-align:left;">
+Homo sapiens
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Single, off-the-shelf treatment of Neuropathic Mucopolysaccharidoses
+with iPSC-derived microglia [scRNA-seq]
+</td>
+<td style="text-align:left;">
+Lysosomal storage disorders (LSDs) are a group of inherited metabolic
+disorders . A subgroup of LSDs is called Mucopolysaccharidoses (MPS),
+where accumulation of glycosaminoglycans causes a progressive
+degenerative disorder. The central nervous system (CNS) is particularly
+impacted with developmental delays, neurological regression, and early
+mortality. Current treatments are often insufficient to fully address
+the clinical need. Here we report the use of microglia derived from
+healthy human induced pluripotent stem cells (hiPSCs) as a potential
+one-time, allogeneic off-the-shelf cell therapy for several MPS.
+iPSC-derived microglia, termed MG01   , are replete with wild-type
+levels of lysosomal enzymes and we show that MG01 can deliver the
+functional enzyme into four different MPS knockout cell lines via
+mannose-6-phosphate receptor-mediated endocytosis in vitro. We then show
+that a single administration of MG01 provides sufficient enzyme to
+prevent behavioral deficits in two different animal models of MPS,
+efficacious to at least eight months after transplantation.
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE222969
+</td>
+<td style="text-align:left;">
+Homo sapiens
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Single, off-the-shelf treatment of Neuropathic Mucopolysaccharidoses
+with iPSC-derived microglia [bulk RNA-seq]
+</td>
+<td style="text-align:left;">
+Lysosomal storage disorders (LSDs) are a group of inherited metabolic
+disorders . A subgroup of LSDs is called Mucopolysaccharidoses (MPS),
+where accumulation of glycosaminoglycans causes a progressive
+degenerative disorder. The central nervous system (CNS) is particularly
+impacted with developmental delays, neurological regression, and early
+mortality. Current treatments are often insufficient to fully address
+the clinical need. Here we report the use of microglia derived from
+healthy human induced pluripotent stem cells (hiPSCs) as a potential
+one-time, allogeneic off-the-shelf cell therapy for several MPS.
+iPSC-derived microglia, termed MG01   , are replete with wild-type
+levels of lysosomal enzymes and we show that MG01 can deliver the
+functional enzyme into four different MPS knockout cell lines via
+mannose-6-phosphate receptor-mediated endocytosis in vitro. We then show
+that a single administration of MG01 provides sufficient enzyme to
+prevent behavioral deficits in two different animal models of MPS,
+efficacious to at least eight months after transplantation.
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE266485
+</td>
+<td style="text-align:left;">
+Mus musculus
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+A disease similarity approach identifies short-lived Niemann-Pick type C
+disease mice with accelerated brain aging as a novel mouse model for
+Alzheimer’s disease and aging research
+</td>
+<td style="text-align:left;">
+Since its first description in 1906 by Dr. Alois Alzheimer, Alzheimer’s
+disease (AD) has been the most common type of dementia. Initially
+thought to be caused by age-associated accumulation of plaques, in
+recent years, research has increasingly associated AD with lysosomal
+storage and metabolic disorders, and the explanation of its pathogenesis
+has shifted from amyloid and tau accumulation to oxidative stress and
+impaired lipid and glucose metabolism aggravated by hypoxic conditions.
+However, the underlying mechanisms linking those cellular processes and
+conditions to disease progression have yet to be defined. Here, we
+applied a disease similarity approach to identify unknown molecular
+targets of AD by using transcriptomic data from congenital diseases
+known to increase AD risk, namely Down Syndrome, Niemann Pick Disease
+Type C (NPC), and Mucopolysaccharidoses I. We uncovered common pathways,
+hub genes, and miRNAs across in vitro and in vivo models of these
+diseases as potential molecular targets for neuroprotection and
+amelioration of AD pathology, many of which have never been associated
+with AD. We then investigated common molecular alterations in brain
+samples from an NPC disease mouse model by juxtaposing them with brain
+samples of both human and mouse models of AD. Detailed phenotypic and
+molecular analyses revealed the NPCmut mouse as a novel, short-lived in
+vivo model of AD characterized by accelerated brain aging, concluding
+that the NPCmut mouse model can serve as a potential short-lived in vivo
+model for AD research and for understanding molecular factors affecting
+brain aging. This research represents the first comprehensive approach
+to congenital disease association with neurodegeneration and a new
+perspective on AD research while highlighting shortcomings and lack of
+correlation in diverse in vitro models. Considering the lack of an AD
+mouse model that recapitulates the physiological hallmarks of brain
+aging, the characterization of a short-lived NPC mouse model will
+further accelerate the research in these fields and offer a unique model
+for understanding the molecular mechanisms of AD from a perspective of
+accelerated brain aging.
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE237632
+</td>
+<td style="text-align:left;">
+Homo sapiens
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Near-cognate tRNAs increase the efficiency and precision of
+pseudouridine-mediated readthrough of premature termination codons
+[PRAISE]
+</td>
+<td style="text-align:left;">
+Nonsense mutations, responsible for ~11% of genetic diseases, create
+premature stop codons (PTCs) and lead to truncated and often
+non-functional proteins. Recently, programmable RNA pseudouridylation
+has emerged as a new type of RNA base editor to suppress PTCs. However,
+current methods suffer from low efficiency and limited precision. Here,
+we develop RESTART v3, an updated version of RESTART, which utilizes
+near-cognate tRNAs to improve the readthrough efficiency of
+pseudouridine-modified PTCs. We show an average of ~5-fold higher
+editing efficiency than RESTART v2 in cultured cells, currently the most
+active RNA pseudouridylation tool to mediate PTC readthrough. Moreover,
+RESTART v3 achieves functional PTC readthrough in disease cell models of
+cystic fibrosis and Hurler syndrome. Furthermore, RESTART v3 enables
+accurate incorporation of the original amino acid for nearly half of the
+PTC sites, considering the naturally occurring frequencies of sense to
+nonsense codons. In line with the benign off-target effect of RESTART,
+RESTART v3 does not change the coding information nor the expression
+level of transcripts with off-target editing; except for the
+specifically overexpressed tRNA molecule, it does not alter the
+expression level of endogenous tRNA pool. Overall, RESTART v3 represents
+an enhanced RNA base editor with increased efficiency and accuracy.
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE237631
+</td>
+<td style="text-align:left;">
+Homo sapiens
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Near-cognate tRNAs increase the efficiency and precision of
+pseudouridine-mediated readthrough of premature termination codons
+[RNA-seq]
+</td>
+<td style="text-align:left;">
+Nonsense mutations, responsible for ~11% of genetic diseases, create
+premature stop codons (PTCs) and lead to truncated and often
+non-functional proteins. Recently, programmable RNA pseudouridylation
+has emerged as a new type of RNA base editor to suppress PTCs. However,
+current methods suffer from low efficiency and limited precision. Here,
+we develop RESTART v3, an updated version of RESTART, which utilizes
+near-cognate tRNAs to improve the readthrough efficiency of
+pseudouridine-modified PTCs. We show an average of ~5-fold higher
+editing efficiency than RESTART v2 in cultured cells, currently the most
+active RNA pseudouridylation tool to mediate PTC readthrough. Moreover,
+RESTART v3 achieves functional PTC readthrough in disease cell models of
+cystic fibrosis and Hurler syndrome. Furthermore, RESTART v3 enables
+accurate incorporation of the original amino acid for nearly half of the
+PTC sites, considering the naturally occurring frequencies of sense to
+nonsense codons. In line with the benign off-target effect of RESTART,
+RESTART v3 does not change the coding information nor the expression
+level of transcripts with off-target editing; except for the
+specifically overexpressed tRNA molecule, it does not alter the
+expression level of endogenous tRNA pool. Overall, RESTART v3 represents
+an enhanced RNA base editor with increased efficiency and accuracy.
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE237630
+</td>
+<td style="text-align:left;">
+Homo sapiens
+</td>
+<td style="text-align:left;">
+Non-coding RNA profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Near-cognate tRNAs increase the efficiency and precision of
+pseudouridine-mediated readthrough of premature termination codons
+[tRNA-seq]
+</td>
+<td style="text-align:left;">
+Nonsense mutations, responsible for ~11% of genetic diseases, create
+premature stop codons (PTCs) and lead to truncated and often
+non-functional proteins. Recently, programmable RNA pseudouridylation
+has emerged as a new type of RNA base editor to suppress PTCs. However,
+current methods suffer from low efficiency and limited precision. Here,
+we develop RESTART v3, an updated version of RESTART, which utilizes
+near-cognate tRNAs to improve the readthrough efficiency of
+pseudouridine-modified PTCs. We show an average of ~5-fold higher
+editing efficiency than RESTART v2 in cultured cells, currently the most
+active RNA pseudouridylation tool to mediate PTC readthrough. Moreover,
+RESTART v3 achieves functional PTC readthrough in disease cell models of
+cystic fibrosis and Hurler syndrome. Furthermore, RESTART v3 enables
+accurate incorporation of the original amino acid for nearly half of the
+PTC sites, considering the naturally occurring frequencies of sense to
+nonsense codons. In line with the benign off-target effect of RESTART,
+RESTART v3 does not change the coding information nor the expression
+level of transcripts with off-target editing; except for the
+specifically overexpressed tRNA molecule, it does not alter the
+expression level of endogenous tRNA pool. Overall, RESTART v3 represents
+an enhanced RNA base editor with increased efficiency and accuracy.
+</td>
+<td style="text-align:right;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE237629
+</td>
+<td style="text-align:left;">
+Homo sapiens; Mus musculus
+</td>
+<td style="text-align:left;">
+Other; Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Near-cognate tRNAs increase the efficiency and precision of
+pseudouridine-mediated readthrough of premature termination codons
+[Target-seq]
+</td>
+<td style="text-align:left;">
+Nonsense mutations, responsible for ~11% of genetic diseases, create
+premature stop codons (PTCs) and lead to truncated and often
+non-functional proteins. Recently, programmable RNA pseudouridylation
+has emerged as a new type of RNA base editor to suppress PTCs. However,
+current methods suffer from low efficiency and limited precision. Here,
+we develop RESTART v3, an updated version of RESTART, which utilizes
+near-cognate tRNAs to improve the readthrough efficiency of
+pseudouridine-modified PTCs. We show an average of ~5-fold higher
+editing efficiency than RESTART v2 in cultured cells, currently the most
+active RNA pseudouridylation tool to mediate PTC readthrough. Moreover,
+RESTART v3 achieves functional PTC readthrough in disease cell models of
+cystic fibrosis and Hurler syndrome. Furthermore, RESTART v3 enables
+accurate incorporation of the original amino acid for nearly half of the
+PTC sites, considering the naturally occurring frequencies of sense to
+nonsense codons. In line with the benign off-target effect of RESTART,
+RESTART v3 does not change the coding information nor the expression
+level of transcripts with off-target editing; except for the
+specifically overexpressed tRNA molecule, it does not alter the
+expression level of endogenous tRNA pool. Overall, RESTART v3 represents
+an enhanced RNA base editor with increased efficiency and accuracy.
+</td>
+<td style="text-align:right;">
+27
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE244310
+</td>
+<td style="text-align:left;">
+Danio rerio
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Zebrafish models of Mucopolysaccharidosis types IIIA, B, &amp; C show
+hyperactivity and changes in oligodendrocyte state
+</td>
+<td style="text-align:left;">
+Sanfilippo syndrome childhood dementia, also known as
+mucopolysaccharidosis type III (MPS III), is a rare inherited lysosomal
+storage disorder. Subtypes of MPS III are caused by deficiencies in one
+of four enzymes required for degradation of the glycosaminoglycan
+heparan sulfate (HS). An inability to degrade HS leads to progressive
+neurodegeneration and death in the second or third decades of life.
+Knowledge of MPS III pathogenesis is incomplete, and no effective
+therapies exist. We generated the hypomorphic mutations sgshS387Lfs,
+nagluA603Efs and hgsnatG577Sfsin the endogenous zebrafish genes
+orthologous to human SGSH, NAGLU, and HGSNAT that are loci for mutations
+causing MPS III subtypes MPS IIIA, B and C respectively. Our models
+display the primary MPS III disease signature of significant brain
+accumulation of HS, while behavioural analyses support hyperactivity
+phenotypes. Brain transcriptome analysis revealed changes related to
+lysosomal, glycosaminoglycan, immune system and iron homeostasis biology
+in all three models but also distinct differences in brain transcriptome
+state between models. The transcriptome analysis also indicated marked
+disturbance of the oligodendrocyte cell state in the brains of MPS IIIA,
+B and C zebrafish, supporting that effects on this cell type are an
+early and consistent characteristic of MPS III. Overall, our zebrafish
+models recapture key characteristics of the human disease and phenotypes
+seen in mouse models. Our models will allow exploitation of the
+zebrafish’s extreme fecundity and accessible anatomy to dissect the
+pathological mechanisms both common and divergent between the MPS IIIA,
+B, and C subtypes.
+</td>
+<td style="text-align:right;">
+61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE217196
+</td>
+<td style="text-align:left;">
+Danio rerio
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Comparison of the effects of mutaions modelling early-onset familial
+Alzheimer’s disease and Sanfilippo syndrome childhood dementia in
+zebrafish larvae
+</td>
+<td style="text-align:left;">
+Neural cells are under immense pressure to maintain proper degradation
+of molecules using their endo-lysosomal pathway (ELP). In Alzheimer’s
+disease (AD), the gradual cognitive worsening of this age-related
+disorder is partially due to dysfunction of the ELP. However, AD is a
+complex disorder and how the genetic landscape eventually leads to AD is
+unclear. Sanfilippo syndrome childhood dementia (mucopolysaccharidosis
+type III, MPSIII) is an extreme consequence of ELP dysfunction, where
+inherited recessive mutations result in the inability to properly
+catabolise a particular polysaccharide, which ultimately accumulates and
+interferes with the function of the ELP. Unlike AD, Sanfilippo is
+genetically simple (all causative genes are identified). The primary
+biochemical consequences are understood and animal models of Sanfilippo
+are considered excellent models of the human disease. Since Sanfilippo
+and AD show similar pathological changes, they likely share
+disease-associated mechanisms. Here, we dissect the similarity between
+AD and Sanfilippo using RNA-seq. We have generated zebrafish knock-in
+models of both diseases: the early-onset familial AD-like (EOfAD-like)
+mutation psen1 Q96_K97del and the MPSIII-like mutation naglu A603fs. We
+generated a family of zebrafish containing wild type, heterozygous
+EOfAD-like and homozygous MPSIII-like genotypes. We raised the family
+until 7 days post fertilisation and performed mRNA-seq on n = 8 induvial
+larvae per genotype. A power calculation revealed that this experiment
+was only contained ~50% power to detect differentially expressed genes.
+Nevertheless, changes to the expression of genes encoding proteins
+involved in lysosomal function could be detected in the MPS-III mutant
+larvae, suggesting a homeostatic response as the cells which make up the
+larval RNA-seq samples respond to dysfunctional lysosomes.
+</td>
+<td style="text-align:right;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE193583
+</td>
+<td style="text-align:left;">
+Mus musculus
+</td>
+<td style="text-align:left;">
+Expression profiling by array
+</td>
+<td style="text-align:left;">
+Expression data from murine MPS I fibroblasts under flavonoids treatment
+</td>
+<td style="text-align:left;">
+Flavonoids are biological compounds with high potency to modulate
+molecular processes. The study was designed to estimate genistein,
+kaempferoland their mixture impact on global gene expression, with
+special focus on key processes in MPS pathogenesis. We used microarrays
+to detail the global program of gene expression underlying flavonoid
+treatment and identified distinct classes of regulated genes during this
+process.
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE189146
+</td>
+<td style="text-align:left;">
+Homo sapiens; Mus musculus
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+AAV-delivered suppressor tRNA overcomes a nonsense mutation in mice
+(mRNA-seq)
+</td>
+<td style="text-align:left;">
+In this study, we utilized a mouse model of mucopolysaccharidosis type I
+(MPS-I) carrying a homozygous nonsense mutation in the Idua gene
+(Idua-W401X, TGG→TAG) to develop rAAV-delivered sup-tRNA therapeutics
+that can overcome a pathogenic UAG premature termination codon (PTC).
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE189145
+</td>
+<td style="text-align:left;">
+Mus musculus
+</td>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:left;">
+AAV-delivered suppressor tRNA overcomes a nonsense mutation in mice
+(tRNA_charging)
+</td>
+<td style="text-align:left;">
+In this study, we utilized a mouse model of mucopolysaccharidosis type I
+(MPS-I) carrying a homozygous nonsense mutation in the Idua gene
+(Idua-W401X, TGG→TAG) to develop rAAV-delivered sup-tRNA therapeutics
+that can overcome a pathogenic UAG premature termination codon (PTC).
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE179274
+</td>
+<td style="text-align:left;">
+Mus musculus; Homo sapiens
+</td>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:left;">
+AAV-delivered suppressor tRNA overcomes a nonsense mutation in mice
+(ribosome profiling)
+</td>
+<td style="text-align:left;">
+In this study, we utilized a mouse model of mucopolysaccharidosis type I
+(MPS-I) carrying a homozygous nonsense mutation in the Idua gene
+(Idua-W401X, TGG→TAG) to develop rAAV-delivered sup-tRNA therapeutics
+that can overcome a pathogenic UAG premature termination codon (PTC).
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE179272
+</td>
+<td style="text-align:left;">
+Mus musculus
+</td>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:left;">
+AAV-delivered suppressor tRNA overcomes a nonsense mutation in mice
+(mim-tRNA)
+</td>
+<td style="text-align:left;">
+In this study, we utilized a mouse model of mucopolysaccharidosis type I
+(MPS-I) carrying a homozygous nonsense mutation in the Idua gene
+(Idua-W401X, TGG→TAG) to develop rAAV-delivered sup-tRNA therapeutics
+that can overcome a pathogenic UAG premature termination codon (PTC).
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE179270
+</td>
+<td style="text-align:left;">
+Mus musculus
+</td>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:left;">
+AAV-delivered suppressor tRNA overcomes a nonsense mutation in mice
+(amplicon)
+</td>
+<td style="text-align:left;">
+In this study, we utilized a mouse model of mucopolysaccharidosis type I
+(MPS-I) carrying a homozygous nonsense mutation in the Idua gene
+(Idua-W401X, TGG→TAG) to develop rAAV-delivered sup-tRNA therapeutics
+that can overcome a pathogenic UAG premature termination codon (PTC).
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE135428
+</td>
+<td style="text-align:left;">
+Homo sapiens
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Physiomimetic model of the human Gut-Liver axis for studies of
+inflammatory diseases
+</td>
+<td style="text-align:left;">
+Association between the microbiome, IBD and liver diseases are known,
+yet cause and effect remain elusive. By connecting human
+microphysiological systems of the gut, liver and circulating Treg/Th17
+cells, we modeled progression of ulcerative colitis (UC) ex vivo. We
+show that microbiome-derived short-chain fatty acids (SCFA) may either
+improve or worsen disease severity, depending on the activation state of
+CD4 T cells. Employing a multiomic approach, we found SCFA reduced
+innate activation of the UC gut and increased hepatic metabolism.
+However, during acute T cell-mediated inflammation, SCFA exacerbate CD4
+T cell effector function leading to gut barrier disruption and liver
+damage. These paradoxical findings underscore the emerging utility of
+human physiomimetic technology in combination with systems immunology to
+study causality and temporal facets of gut-liver axis related diseases
+where animal models might leave ambiguity.
+</td>
+<td style="text-align:right;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE159356
+</td>
+<td style="text-align:left;">
+Mus musculus
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Precise Genome Editing in vivo with Single, Canonical AAV Vectors.
+Encoding Guide RNA, Cas9, and Homologous Repair Donor
+</td>
+<td style="text-align:left;">
+Adeno-associated virus (AAV) vectors are important delivery platforms
+for therapeutic genome editing but are severely constrained by cargo
+limits, especially for large effectors like Cas9s. Simultaneous delivery
+of multiple vectors can limit dose and efficacy and increase safety
+risks. The use of compact effectors has enabled single-AAV delivery of
+Cas9s with 1-3 guides for edits that use end-joining repair pathways,
+but many precise edits that correct disease-causing mutations in vivo
+require homology-directed repair (HDR) templates. Here, we describe
+single-vector, ~4.8-kb AAV platforms that express Nme2Cas9 and either
+two sgRNAs to produce segmental deletions, or a single sgRNA with an HDR
+template. We also examine the utility of Nme2Cas9 target sites in the
+vector for self-inactivation. We demonstrate that these platforms can
+effectively treat two disease models [type I hereditary tyrosinemia
+(HT-I) and mucopolysaccharidosis type I (MPS-I)] in mice. These results
+will enable single-vector AAVs to achieve diverse therapeutic genome
+editing outcomes.
+</td>
+<td style="text-align:right;">
+59
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE139001
+</td>
+<td style="text-align:left;">
+Mus musculus
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Brain delivery and efficacy of a lysosomal enzyme using a blood-brain
+barrier transport vehicle [RNA-seq]
+</td>
+<td style="text-align:left;">
+The enzyme transport vehicle (ETV:IDS) is a lysosomal enzyme fused to
+iduronate 2-sulfatase (ETV:IDS), the lysosomal enzyme deficient in
+mucopolysaccharidosis type II (MPS II). ETV:IDS treatment significantly
+improved brain delivery of IDS in a preclinical model of disease,
+enabling enhanced distribution to neurons, astrocytes, and microglia
+throughout the brain. Improved brain exposure for ETV:IDS translated to
+a significant reduction in accumulated substrates in these CNS cell
+types and peripheral tissues, and in a complete correction of downstream
+disease-relevant pathologies in the brain, including secondary
+accumulation of lysosomal lipids, perturbed gene expression,
+neuroinflammation, and neuronal injury. These results highlight the
+therapeutic potential of the ETV approach as a new treatment paradigm
+for MPS II and for other CNS diseases more broadly.
+</td>
+<td style="text-align:right;">
+64
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GSE130088
+</td>
+<td style="text-align:left;">
+Canis lupus familiaris
+</td>
+<td style="text-align:left;">
+Expression profiling by high throughput sequencing
+</td>
+<td style="text-align:left;">
+Molecular Profiling of Failed Endochondral Ossification in
+Mucopolysaccharidosis VII
+</td>
+<td style="text-align:left;">
+Mucopolysaccharidosis (MPS) VII is a lysosomal storage disorder
+characterized by deficient activity of β-glucuronidase, leading to
+progressive accumulation of incompletely degraded heparan, dermatan and
+chondroitin sulfate glycosaminoglycans (GAGs). Patients with MPS VII
+exhibit progressive skeletal deformity including kyphoscoliosis and
+joint dysplasia, which decrease quality of life and increase mortality.
+Previously, using the naturally-occurring canine model, we demonstrated
+that one of the earliest skeletal abnormalities to manifest in MPS VII
+is failed initiation of secondary ossification in vertebrae and long
+bones at the requisite postnatal developmental stage. The objective of
+this study was to obtain global insights into the molecular mechanisms
+underlying this failed initiation of secondary ossification using whole
+transcriptome sequencing (RNA-Seq). Epiphyseal tissue was isolated from
+the vertebrae of control and MPS VII affected dogs at 9 and 14
+days-of-age (n=5 for each group). Differences in global gene expression
+across this developmental window for both cohorts were established using
+RNA-Seq. A targeted analysis focused on signaling pathways important in
+the regulation of endochondral ossification, and a subset of gene
+expression changes were validated using qPCR. Principal Component
+Analysis revealed clustering of samples from each group, indicating
+clear effects of both age and disease state. At 9 days-of-age, 1375
+genes were significantly differentially expression between MPS VII and
+control, and by 14 days-of-age, this increased to 4719 genes.
+Osteoactivin (GPNMB) was the top upregulated gene in MPS VII at both
+ages. Targeted analysis revealed temporal changes in gene expression
+from 9 to 14 days-of-age in control samples consistent with chondrocyte
+maturation, cartilage resorption, and osteogenesis. In MPS VII samples,
+however, elements of key osteogenic pathways such as Wnt/β-catenin and
+BMP signaling were dysregulated. In conclusion, this study represents
+the first step towards identifying druggable therapeutic targets and
+putative biomarkers for bone disease in MPS VII patients during
+postnatal growth.
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>conclusion</h1>
+<p>This works nicely. Now to try expanding this to other disorders</p>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.3.2 (2023-10-31)
+Platform: aarch64-apple-darwin20 (64-bit)
+Running under: macOS Sonoma 14.3
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Australia/Adelaide
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] kableExtra_1.4.0    rentrez_1.2.3       GEOquery_2.70.0    
+ [4] Biobase_2.62.0      BiocGenerics_0.48.1 lubridate_1.9.3    
+ [7] forcats_1.0.0       stringr_1.5.1       dplyr_1.1.4        
+[10] purrr_1.0.2         readr_2.1.5         tidyr_1.3.1        
+[13] tibble_3.2.1        ggplot2_3.5.0       tidyverse_2.0.0    
+[16] workflowr_1.7.1    
+
+loaded via a namespace (and not attached):
+ [1] gtable_0.3.4      xfun_0.43         bslib_0.7.0       processx_3.8.4   
+ [5] callr_3.7.6       tzdb_0.4.0        vctrs_0.6.5       tools_4.3.2      
+ [9] ps_1.7.6          generics_0.1.3    curl_5.2.1        fansi_1.0.6      
+[13] highr_0.10        pkgconfig_2.0.3   data.table_1.15.4 lifecycle_1.0.4  
+[17] compiler_4.3.2    git2r_0.33.0      statmod_1.5.0     munsell_0.5.1    
+[21] getPass_0.2-4     httpuv_1.6.15     htmltools_0.5.8.1 sass_0.4.9       
+[25] yaml_2.3.8        later_1.3.2       pillar_1.9.0      jquerylib_0.1.4  
+[29] whisker_0.4.1     cachem_1.0.8      limma_3.58.1      tidyselect_1.2.1 
+[33] digest_0.6.35     stringi_1.8.3     rprojroot_2.0.4   fastmap_1.1.1    
+[37] grid_4.3.2        colorspace_2.1-0  cli_3.6.2         magrittr_2.0.3   
+[41] XML_3.99-0.16.1   utf8_1.2.4        withr_3.0.0       scales_1.3.0     
+[45] promises_1.3.0    timechange_0.3.0  rmarkdown_2.26    httr_1.4.7       
+[49] hms_1.1.3         evaluate_0.23     knitr_1.45        viridisLite_0.4.2
+[53] rlang_1.1.3       Rcpp_1.0.12       glue_1.7.0        xml2_1.3.6       
+[57] svglite_2.1.3     rstudioapi_0.16.0 jsonlite_1.8.8    R6_2.5.1         
+[61] systemfonts_1.0.6 fs_1.6.3         </code></pre>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+https://docs.mathjax.org/en/latest/web/configuration.html. This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -8,4 +8,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+# Childhood dementia omics datasets
+
+A proof of concept was first performed for the MPS diseases - see [here](MPS.html) and this worked well. 
