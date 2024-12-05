@@ -58,10 +58,21 @@ cd.keywords <- cdi_diseases$alternative_names %>% na.omit() %>%
   str_split(pattern = "; ") %>% 
   unlist(use.names = F) %>% 
   unique
+```
+
+the cd keywords (`r length(cd.keywords)` words/terms) were exported for manual curation, then reimported. some of the abbreviations will not be totally useful and will pull out random stuff. 
+
+```{r}
+cd.keywords %>% 
+  write.csv("output/cdi_keywords.csv")
+
+cd.keywords <- 
+  read.csv("output/cdi_keywords.csv", blank.lines.skip = TRUE)$x
+
 
 # create a list which has 12 keywords per list element. 
 cd.keywords.searchterm <- cd.keywords %>% 
-  split(ceiling(seq_along(cd.keywords) / 12)) %>% # split the list
+  split(ceiling(seq_along(cd.keywords) / 5)) %>% # split the list
   lapply(function(x) {
     paste(x, "OR ") # add an OR for searching. 
   }) %>% 
@@ -70,49 +81,12 @@ cd.keywords.searchterm <- cd.keywords %>%
       str_flatten() %>% # convert to a single vector
       str_sub(end = -5) # remove the last "OR"
   })
-```
-# test first 12 search terms
-```{r}
-# search GEO for 
-search_results <- entrez_search(db = "gds", term = cd.keywords.searchterm$`1` )
 
-# Get GEO accessions (GSE IDs)
-geo_accessions <- search_results$ids
-
-
-# get more info. 
-# this takes a while
-record_summaries <- lapply(geo_accessions, 
-                           function(id) entrez_summary(db = "gds", id = id)
-                           )
 ```
 
-The GEO database (GDS) was searched with the package rentrez for the term "mucopolysaccharidoses". This returned `r search_results$count` datasets. 
-
-Useful metadata has been added to the sheet below (and this can be exported - ask KB)
-
+# all keywords. 
 ```{r}
-lapply(record_summaries, function(x) {
-  tibble(
-    accession = x$accession,    # GEO accession number
-    species = x$taxon,
-    type = x$gdstype %>% unlist, # type of exp
-    title = x$title,            # Title of the dataset
-    summary = x$summary,         # Summary/description
-    nsamples = x$samples %>% nrow
-  )
-}) %>% 
-  bind_rows() %>% 
-  kable(caption = "Datasets in GEO database containing mucopolysaccharidoses") %>% 
-  kable_styling() %>% 
-  scroll_box(width = "100%", height = "800px")
-```
 
-This works nicely. But will require some manual curation at the end. 
-
-## all keywords. 
-
-```{r}
 # this takes a while
 # search the GEO db for all the childhood dementia search terms. 
 record.summaries.all <- cd.keywords.searchterm %>% 
