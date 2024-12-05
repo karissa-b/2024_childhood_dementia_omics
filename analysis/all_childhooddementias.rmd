@@ -1,0 +1,181 @@
+---
+title: "all_childhooddementias"
+author: "Karissa Barthelson"
+date: "2024-12-04"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  autodep = TRUE,
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.align = "center", 
+  out.width ="75%", 
+  out.height = "75%"
+)
+```
+
+```{r}
+library(tidyverse)
+library(GEOquery)
+library(rentrez)
+library(kableExtra)
+library(readxl)
+library(DT)
+```
+
+I want to write a script here to be able to recursively obtain all the dataset metadata in the GEO database for the childhood dementias. 
+
+The tricky thing will be the keywords here, might use the childhood dementia knowledge-base as inspiration. 
+
+## Key words
+I went to the [CDI knowledgebase](https://knowledgebase.childhooddementia.org/) and downloaded a spreadsheet of "diseases". Below is a preview of this spreadsheet. 
+
+```{r}
+cdi_diseases <- read_excel("data/CDI_KB_diseases-1733292612.xlsx")
+
+cdi_diseases %>%   
+  head %>% 
+  kable %>% 
+  kable_styling() %>% 
+  scroll_box(width = "100%", height = "800px")
+```
+
+The alternative_names column looks useful - carries all the names for each disease. 
+
+I need to break this up into smaller fragments to be able to search this in R. rentrez will throw an error if I try searching all at once. 
+
+```{r}
+# split the multiple names within each disease
+cd.keywords <- cdi_diseases$alternative_names %>% na.omit() %>% 
+  str_split(pattern = ", ", ) %>% 
+  unlist(use.names = F) %>% 
+  str_split(pattern = "; ") %>% 
+  unlist(use.names = F) %>% 
+  unique
+
+# create a list which has 12 keywords per list element. 
+cd.keywords.searchterm <- cd.keywords %>% 
+  split(ceiling(seq_along(cd.keywords) / 12)) %>% # split the list
+  lapply(function(x) {
+    paste(x, "OR ") # add an OR for searching. 
+  }) %>% 
+  lapply(function(x) {
+    x %>% 
+      str_flatten() %>% # convert to a single vector
+      str_sub(end = -5) # remove the last "OR"
+  })
+```
+# test first 12 search terms
+```{r}
+# search GEO for 
+search_results <- entrez_search(db = "gds", term = cd.keywords.searchterm$`1` )
+
+# Get GEO accessions (GSE IDs)
+geo_accessions <- search_results$ids
+
+
+# get more info. 
+# this takes a while
+record_summaries <- lapply(geo_accessions, 
+                           function(id) entrez_summary(db = "gds", id = id)
+                           )
+```
+
+The GEO database (GDS) was searched with the package rentrez for the term "mucopolysaccharidoses". This returned `r search_results$count` datasets. 
+
+Useful metadata has been added to the sheet below (and this can be exported - ask KB)
+
+```{r}
+lapply(record_summaries, function(x) {
+  tibble(
+    accession = x$accession,    # GEO accession number
+    species = x$taxon,
+    type = x$gdstype %>% unlist, # type of exp
+    title = x$title,            # Title of the dataset
+    summary = x$summary,         # Summary/description
+    nsamples = x$samples %>% nrow
+  )
+}) %>% 
+  bind_rows() %>% 
+  kable(caption = "Datasets in GEO database containing mucopolysaccharidoses") %>% 
+  kable_styling() %>% 
+  scroll_box(width = "100%", height = "800px")
+```
+
+This works nicely. But will require some manual curation at the end. 
+
+## all keywords. 
+
+```{r}
+# this takes a while
+# search the GEO db for all the childhood dementia search terms. 
+record.summaries.all <- cd.keywords.searchterm %>% 
+  lapply(function(x) {
+    search_results <- entrez_search(db = "gds", term = x)
+    geo_accessions <- search_results$ids
+    record_summaries <- lapply(geo_accessions, 
+                               function(id) entrez_summary(db = "gds", id = id)
+    )
+})
+
+# convert to a tibble
+all.res.tibble <- record.summaries.all %>% 
+  lapply(function(rs) {
+    lapply(rs, function(x) 
+      {
+    tibble(
+      accession = x$accession,    # GEO accession number
+      species = x$taxon, 
+      type = x$gdstype %>% unlist, # type of exp
+      title = x$title,            # Title of the dataset
+      summary = x$summary,         # Summary/description
+      nsamples = x$samples %>% nrow
+    )
+    })
+  }) %>% 
+  bind_rows()
+```
+
+I then searched all the keywords recursively. The GEO database (GDS) was searched with the package rentrez for all the search terms from the "alternative names" column fron the CDI KB. This returned `r dim(all.res.tibble)[1]` datasets. These are found in the table below. you can search keywords in the search box. 
+
+```{r}
+# display as a DT table. 
+all.res.tibble %>% 
+  datatable(
+    class = 'cell-border stripe', 
+    filter = "top",
+    caption = 'Table 1: childhood dementia datasets in GEO database.'
+  )
+```
+
+
+## export data
+A spreadsheet was generated for manual curation of irrelevant datasets. This can be downloaded from the github repo associated with this webpage. 
+
+```{r}
+# export the results for manual curation
+record.summaries.all %>% 
+  lapply(function(rs) {
+    lapply(rs, function(x) 
+      {
+    tibble(
+      accession = x$accession,    # GEO accession number
+      species = x$taxon,
+      type = x$gdstype %>% unlist, # type of exp
+      title = x$title,            # Title of the dataset
+      summary = x$summary,         # Summary/description
+      nsamples = x$samples %>% nrow
+    )
+    })
+  }) %>% 
+  bind_rows() %>% 
+  write_excel_csv("output/20241205 childhood dementia GEOdb.csv")
+```
+
+

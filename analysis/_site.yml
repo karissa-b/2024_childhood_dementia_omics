@@ -7,6 +7,8 @@ navbar:
     href: index.html
   - text: MPS
     href: MPS.html
+  - text: all_CDs
+    href: all_childhooddementias.html
 
 output:
   workflowr::wflow_html:

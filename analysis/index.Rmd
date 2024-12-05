@@ -10,4 +10,10 @@ editor_options:
 
 # Childhood dementia omics datasets
 
-A proof of concept was first performed for the MPS diseases - see [here](MPS.html) and this worked well. 
+This is a db search analysis for 'omics datasets for the childhood dementias. I want to get a feel for how much info in the literature is out there. 
+
+A proof of concept was first performed for the MPS diseases in the GEO database - see [here](MPS.html) and this worked well. 
+
+I then went on to do this for all childhood dementias in the GEO database using search terms generated from the CDI knowledgebase. - see [here](all_childhooddementias.html). This has worked well, just need to filter out some irrelevent datasets. 
+
+
